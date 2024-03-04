@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+				
+				<a class="btn" href="http://127.0.0.1:5000/">Home Page »</a>
+				<h2>
+					FerTank01 Stream & Analytics page
+                </h2>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<p>
+				Tank 01 - MFRD1
+            </p>
+			<img alt="Bootstrap Image Preview" style="width: 800px; height: auto;" src="http://127.0.0.1:5000/yolo_video_feed" /> 
+			
+			<p>
+            </p>
+			
+            <a class="btn" href="http://127.0.0.1:5000/stop_recording">Stop Recording »</a>
+
+			<h2>
+				TANK 01 ANALYTICS
+			</h2>
+
+			<img id="plot-img">
+    		<script src="{{ url_for('static', filename='files/main.js') }}"></script>
+			
+			<p>
+			
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+</html>
