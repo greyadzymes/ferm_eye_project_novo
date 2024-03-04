@@ -198,7 +198,7 @@ def stop_recording():
 # called by the .js file should show the live updating chart 
 # this regularly breaks the program, everything works fine without it 
  
-@app.route('/plot', methods = ['GET', 'POST'])
+"""@app.route('/plot', methods = ['GET', 'POST'])
 def plot():
     time.sleep(1)
     df_tank1 = yolo_stream()  # this variable might be bad
@@ -242,7 +242,7 @@ def plot():
             time.sleep(1)
     
     # Set the response headers to indicate that this is an SSE endpoint
-    return Response(generate(), mimetype='text/event-stream', headers={'Cache-Control': 'no-cache', 'Connection': 'keep-alive'})
+    return Response(generate(), mimetype='text/event-stream', headers={'Cache-Control': 'no-cache', 'Connection': 'keep-alive'})"""
 
 
 
