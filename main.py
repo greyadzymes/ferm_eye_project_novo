@@ -7,12 +7,11 @@ app.secret_key = 'GDEA'
 recording_status = False
 threading_status = True
 
-# add a threading.thread() function to continually update the frame_buffer 
-
 # Home page
 @app.route('/', methods=['GET', 'POST'])
 def home_page():
-    global threading_status
+    global threading_status, recording_status
+    recording_status = session.get('recording', False)
     if threading_status:
         threading.Thread(target=back_end.frame_buffer_update).start()
         threading_status = False
@@ -57,6 +56,11 @@ def yolo_video_feed():
     session['recording'] = True
     recording_status = session.get('recording')
     return Response(back_end.generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/live_chart', methods=['GET', 'POST'])
+def chart_outputs():
+    #chart chart
+    return Response(back_end.chart_display(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
